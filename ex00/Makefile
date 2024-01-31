@@ -1,4 +1,4 @@
-NAME = canon
+NAME = Orthodox_Canonical_Form
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:56:32 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/20 10:56:33 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:04:17 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int main( void )
     std::cout << Fixed::max( a, b ) << std::endl;
 
     std::cout << std::endl;
-    // comparison operators:
+
     std::cout << "(a > b) = " << (a > b) << std::endl;
     std::cout << "(a < b) = " << (a < b) << std::endl;
     std::cout << "(a >= b) = " << (a >= b) << std::endl;
     std::cout << "(a <= b) = " << (a <= b) << std::endl;
     std::cout << "(a == b) = " << (a == b) << std::endl;
     std::cout << "(a != b) = " << (a != b) << std::endl;
-    // arithmetic operators:
+
     std::cout << "(a + b) = " << (a + b) << std::endl;
     std::cout << "(a - b) = " << (a - b) << std::endl;
     std::cout << "(a * b) = " << (a * b) << std::endl;

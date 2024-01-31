@@ -6,21 +6,36 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:56:52 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/20 10:56:53 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:03:29 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixedValue(0) {}
+Fixed::Fixed()
+{
+    fixedValue = 0;
+} 
 
-Fixed::Fixed(const int intValue) : fixedValue(intValue << fractionalBits) {}
+Fixed::Fixed(const int intValue)
+{
+    fixedValue = intValue << fractionalBits;
+}
 
-Fixed::Fixed(const float floatValue) : fixedValue(roundf(floatValue * (1 << fractionalBits))) {}
+Fixed::Fixed(const float floatValue)
+{
+    fixedValue = roundf(floatValue * (1 << fractionalBits));
+} 
 
-Fixed::Fixed(const Fixed& other) : fixedValue(other.fixedValue) {}
+Fixed::Fixed(const Fixed& other)
+{
+    fixedValue = other.fixedValue;
+} 
 
-Fixed::~Fixed() {}
+Fixed::~Fixed()
+{
+    
+}
 
 Fixed& Fixed::operator = (const Fixed& other)
 {
@@ -129,7 +144,7 @@ float Fixed::toFloat() const
     return static_cast<float>(fixedValue) / (1 << fractionalBits);
 }
 
-std::ostream& operator << (std::ostream& os, const Fixed& fixed)
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
     os << fixed.toFloat();
     return os;

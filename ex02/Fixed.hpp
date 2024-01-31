@@ -7,14 +7,17 @@
 class Fixed
 {
     private:
+
         int fixedValue;
         static const int fractionalBits = 8;
+
     public:
-            Fixed();                // Default constructor
-            Fixed(int intValue);    // Constructor with int parameter
-            Fixed(float floatValue); // Constructor with float parameter
+
+            Fixed();                
+            Fixed(int intValue);    
+            Fixed(float floatValue); 
             Fixed(const Fixed& other);
-            ~Fixed();                     // Destructor
+            ~Fixed();              
 
             float toFloat() const;
             static Fixed& min(Fixed& s1, Fixed& s2);
@@ -41,6 +44,6 @@ class Fixed
             Fixed   operator--(int);    // post-decrement operator
 };
 
-std::ostream& operator << (std::ostream& os, const Fixed& obj);
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif

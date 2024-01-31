@@ -6,7 +6,7 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:54:42 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/20 10:54:43 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:53:07 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 const int Fixed::fractional_bits = 8;
 
-Fixed& Fixed::operator = (const Fixed& other)
+Fixed& Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &other)
-        this->value = other.getRawBits();
+    
+    this->value = other.value;
     return (*this);
 }
 
-Fixed::Fixed() : value(0)
+Fixed::Fixed()
 {
     std::cout << "Default constructor called" << std::endl;
+    setRawBits(0);
 }
 
 Fixed::Fixed(const Fixed& other)

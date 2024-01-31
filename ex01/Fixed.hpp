@@ -7,22 +7,24 @@
 class Fixed
 {
     private:
+
          int fixedValue;
          static const int fractionalBits = 8;
+
     public:
-          Fixed();                      // Default constructor
-          Fixed(const int intValue);    // Constructor with int parameter
-          Fixed(const float floatValue); // Constructor with float parameter
-          Fixed(const Fixed& other);    // Copy constructor
-          ~Fixed();                     // Destructor
+    
+          Fixed();                      
+          Fixed(const int intValue);   
+          Fixed(const float floatValue); 
+          Fixed(const Fixed& other);    
+          ~Fixed();                     
 
-          Fixed& operator = (const Fixed& other); // Copy assignment operator
-          float toFloat() const; // Convert to float
+          Fixed& operator=(const Fixed& other); 
+          float toFloat() const;
 
-          int toInt() const;     // Convert to int
+          int toInt() const;     
 };
 
-// Overload << operator for insertion into output stream
-std::ostream& operator << (std::ostream& os, const Fixed& fixed);
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

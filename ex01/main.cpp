@@ -6,12 +6,13 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:55:34 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/20 10:55:35 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:53:21 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+#include "Fixed.hpp"
 int main( void ) 
 {
     Fixed a;
