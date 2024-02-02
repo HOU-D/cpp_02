@@ -6,11 +6,13 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:55:37 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/31 17:00:36 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/02 23:08:59 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::fractionalBits = 8;
 
 Fixed::Fixed()
 {
@@ -27,12 +29,13 @@ Fixed::Fixed(const int intValue)
 Fixed::Fixed(const float floatValue)
 {
     std::cout << "Float constructor called" << std::endl;
-    fixedValue = roundf(floatValue * (1 << fractionalBits));
+    fixedValue =  floatValue * (1 << fractionalBits);
+    fixedValue =  roundf(floatValue * (1 << fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-    fixedValue = other.fixedValue;
+    *this = other;
     std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -59,8 +62,9 @@ int Fixed::toInt() const
     return fixedValue >> fractionalBits;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream& operator<<(std::ostream& output, const Fixed& fixed)
 {
-    os << fixed.toFloat();
-    return os;
+    
+    output << fixed.toFloat();
+    return output;
 }

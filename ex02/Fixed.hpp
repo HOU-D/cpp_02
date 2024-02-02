@@ -9,7 +9,7 @@ class Fixed
     private:
 
         int fixedValue;
-        static const int fractionalBits = 8;
+        static const int fractionalBits;
 
     public:
 
@@ -38,10 +38,10 @@ class Fixed
             Fixed   operator / (const Fixed& other) const ;
             Fixed   operator - (const Fixed& other) const ;
 
-            Fixed&  operator++();       // Pre-increment operator
-            Fixed   operator++(int);    // Post-increment operator
-            Fixed&  operator--();       // Pre-decrement operator
-            Fixed   operator--(int);    // post-decrement operator
+            Fixed&  operator++();       
+            Fixed   operator++(int);    
+            Fixed&  operator--();       
+            Fixed   operator--(int);    
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);

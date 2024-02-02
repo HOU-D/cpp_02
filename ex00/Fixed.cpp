@@ -6,13 +6,31 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:54:42 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/30 14:53:07 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/02 22:07:55 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 const int Fixed::fractional_bits = 8;
+
+Fixed::Fixed()
+{
+    std::cout << "Default constructor called" << std::endl;
+    setRawBits(0);
+}
+
+void    Fixed::setRawBits( int const raw )
+{
+    value = raw;
+} 
+
+Fixed::Fixed(const Fixed& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
@@ -22,17 +40,6 @@ Fixed& Fixed::operator=(const Fixed& other)
     return (*this);
 }
 
-Fixed::Fixed()
-{
-    std::cout << "Default constructor called" << std::endl;
-    setRawBits(0);
-}
-
-Fixed::Fixed(const Fixed& other)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = other;
-}
 
 Fixed::~Fixed()
 {
@@ -45,7 +52,5 @@ int Fixed::getRawBits( void ) const
     return (value);
 }
 
-void    Fixed::setRawBits( int const raw )
-{
-    value = raw;
-}
+
+

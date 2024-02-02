@@ -6,11 +6,13 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:56:52 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/31 17:03:29 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/02 23:33:22 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::fractionalBits = 8;
 
 Fixed::Fixed()
 {
@@ -144,8 +146,8 @@ float Fixed::toFloat() const
     return static_cast<float>(fixedValue) / (1 << fractionalBits);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream& operator<<(std::ostream& output, const Fixed& fixed)
 {
-    os << fixed.toFloat();
-    return os;
+    output << fixed.toFloat();
+    return output;
 }

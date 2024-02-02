@@ -6,13 +6,12 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:55:34 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/01/31 16:53:21 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/02 22:52:53 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
 #include "Fixed.hpp"
+
 int main( void ) 
 {
     Fixed a;
@@ -21,8 +20,7 @@ int main( void )
     Fixed const d( b );
   
     a = Fixed( 1234.4321f );
-  
-    std::cout << "a is " << a << std::endl;
+   
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;
     std::cout << "d is " << d << std::endl;
