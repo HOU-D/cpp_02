@@ -7,8 +7,8 @@ class Fixed
 {
     private:
 
-        int value;
-        static const int fractional_bits;
+        int                 value;
+        static const int    fractional_bits;
 
     public:
 
