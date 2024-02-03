@@ -6,7 +6,7 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:55:37 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/02/03 15:34:18 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/03 21:41:20 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int Fixed::toInt() const
 
 std::ostream& operator<<(std::ostream& output, const Fixed& fixed)
 {
-    
     output << fixed.toFloat();
     return output;
 }
