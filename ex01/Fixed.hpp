@@ -21,8 +21,8 @@ class Fixed
           Fixed(const int intValue);   
           Fixed(const float floatValue); 
 
-          float toFloat() const;
-          int toInt() const;    
+          float     toFloat() const;
+          int       toInt() const;    
            
 };
 
