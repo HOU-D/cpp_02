@@ -6,7 +6,7 @@
 /*   By: hoakoumi <hoakoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 10:56:52 by hoakoumi          #+#    #+#             */
-/*   Updated: 2024/02/03 15:31:25 by hoakoumi         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:02:23 by hoakoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ const int Fixed::fractionalBits = 8;
 
 Fixed::Fixed()
 {
-    fixedValue = 0;
+    fixedValue = 10;
 } 
 
 Fixed::Fixed(const int intValue)
@@ -93,10 +93,17 @@ Fixed Fixed::operator * (const Fixed& other) const
 
 Fixed Fixed::operator / (const Fixed& other) const
 {
-    return Fixed(this->toFloat() / other.toFloat());
+    if (other.toFloat())
+        return Fixed(this->toFloat() / other.toFloat());
+    else 
+       {
+         std::cout << "division by zero is undefined" <<std::endl;
+         exit(1);
+       }
+
 }
 
-Fixed Fixed::operator++() //return reference
+Fixed& Fixed::operator++()
 {
     fixedValue =fixedValue + 1;
     return  *this;
@@ -109,7 +116,7 @@ Fixed Fixed::operator++(int)
     return  (tmp);
 }
 
-Fixed Fixed::operator--()// return reference
+Fixed& Fixed::operator--()
 {
     fixedValue = fixedValue - 1;
     return *this;
